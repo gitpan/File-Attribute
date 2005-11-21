@@ -1,0 +1,5 @@
+Revision history for File-Attribute
+
+0.01    21 November 2005
+        First version, released on an unsuspecting world.
+	Obsoletes ConfigDirectory::Local
