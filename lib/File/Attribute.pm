@@ -15,11 +15,11 @@ File::Attribute - read and write file attributes
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -45,6 +45,10 @@ tries C</path/to/a/.language>, and then C</path/to/a/.language>, then
 C</path/to/.language>, and finally, C</path/.language>.  C</.language>
 is not tried because the search will not ascend above the (optional)
 C<top> argument.
+
+Note that C<top> must contain path.  (See RT "bug" #17174.)  If you
+can't guarantee this, then don't specify it -- it's optional.  (It
+defaults to "/".  If this doesn't work on Win32, please report a bug.)
 
 If C<read_attribute> encounters a blank file at any stage in the
 serach, it will terminate the search and return nothing (even if a

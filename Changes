@@ -1,5 +1,8 @@
 Revision history for File-Attribute
 
+0.02    2 April 2006
+	Fixing unit tests on Win32, bug #17174.
+
 0.01    21 November 2005
         First version, released on an unsuspecting world.
 	Obsoletes ConfigDirectory::Local

@@ -1,9 +1,10 @@
+.cvsignore
 Changes
-MANIFEST
-META.yml # Will be created by "make dist"
-Makefile.PL
-README
 lib/File/Attribute.pm
+Makefile.PL
+MANIFEST
+META.yml			# Will be created by "make dist"
+README
 t/00-load.t
 t/01-read.t
 t/02-write.t
@@ -13,6 +14,6 @@ t/tests/.global
 t/tests/1/.one
 t/tests/1/2/.two
 t/tests/1/2/3/.three
-t/tests/1/2/3/4/.four
 t/tests/1/2/3/4/.file.five
+t/tests/1/2/3/4/.four
 t/tests/1/2/3/4/file

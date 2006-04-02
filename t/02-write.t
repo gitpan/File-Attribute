@@ -3,11 +3,26 @@
 use Test::More tests=>60;
 use File::Attribute;
 
-`rm -rf t/tests/write`; # get rid of stale data
-mkdir "t/tests/write";
-mkdir "t/tests/write/dir";
-`touch t/tests/write/file`;
-`touch t/tests/write/dir/file`;
+eval {
+    `rm -rf t/tests/write`; # get rid of stale data
+};
+
+mkdir "t/tests/write"    or die;
+mkdir "t/tests/write/dir" or die;
+
+# for windows users without touch installed (how can you use a
+# computer without touch!?)
+
+sub touch {
+    open my $file, '>', $_[0] or die;
+    print {$file} "\n";
+    close $file;
+}
+
+touch("t/tests/write/file");
+touch("t/tests/write/dir/file");
+
+# cleanup complete
 
 my @names = 
   qw(0 1 2 3 4 5 aaa bbb ccc ddd eee fff ggg InterestingName .something .file .dir .file.dir ..file..dir ...);
